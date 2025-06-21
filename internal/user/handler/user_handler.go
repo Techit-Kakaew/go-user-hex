@@ -3,9 +3,9 @@ package handler
 import (
 	"net/http"
 
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/domain"
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/usecase"
 	"github.com/labstack/echo/v4"
-	"github.com/yourusername/go-user-hex/internal/user/domain"
-	"github.com/yourusername/go-user-hex/internal/user/usecase"
 )
 
 type UserHandler struct {

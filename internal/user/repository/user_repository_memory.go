@@ -3,7 +3,7 @@ package repository
 import (
 	"errors"
 
-	"github.com/yourusername/go-user-hex/internal/user/domain"
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/domain"
 )
 
 type userRepoMemory struct {

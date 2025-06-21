@@ -5,9 +5,9 @@ import (
 
 	"github.com/labstack/echo/v4"
 
-	"github.com/yourusername/go-user-hex/internal/user/handler"
-	"github.com/yourusername/go-user-hex/internal/user/repository"
-	"github.com/yourusername/go-user-hex/internal/user/usecase"
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/handler"
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/repository"
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/usecase"
 )
 
 func main() {

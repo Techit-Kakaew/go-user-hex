@@ -1,4 +1,4 @@
-module go-user-hex
+module github.com/Techit-Kakaew/go-user-hex
 
 go 1.24.3
 

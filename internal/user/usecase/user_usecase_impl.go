@@ -3,9 +3,9 @@ package usecase
 import (
 	"time"
 
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/domain"
+	"github.com/Techit-Kakaew/go-user-hex/internal/user/repository"
 	"github.com/google/uuid"
-	"github.com/yourusername/go-user-hex/internal/user/domain"
-	"github.com/yourusername/go-user-hex/internal/user/repository"
 	"golang.org/x/crypto/bcrypt"
 )
 
