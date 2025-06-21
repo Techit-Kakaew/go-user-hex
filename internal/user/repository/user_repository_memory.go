@@ -30,3 +30,10 @@ func (r *userRepoMemory) FindByEmail(email string) (*domain.User, error) {
 	}
 	return nil, errors.New("user not found")
 }
+
+func (r *userRepoMemory) GetByID(id string) (*domain.User, error) {
+	if user, ok := r.users[id]; ok {
+		return user, nil
+	}
+	return nil, errors.New("user not found")
+}

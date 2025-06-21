@@ -1,8 +1,10 @@
 package usecase
 
 import (
+	"errors"
 	"time"
 
+	"github.com/Techit-Kakaew/go-user-hex/internal/auth"
 	"github.com/Techit-Kakaew/go-user-hex/internal/user/domain"
 	"github.com/Techit-Kakaew/go-user-hex/internal/user/repository"
 	"github.com/google/uuid"
@@ -28,4 +30,26 @@ func (uc *userUseCase) Register(user *domain.User) error {
 	user.CreatedAt = time.Now()
 
 	return uc.repo.Create(user)
+}
+
+func (uc *userUseCase) Login(email, password string) (string, error) {
+	user, err := uc.repo.FindByEmail(email)
+	if err != nil {
+		return "", errors.New("invalid credentials")
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password)); err != nil {
+		return "", errors.New("invalid credentials")
+	}
+
+	token, err := auth.GenerateJWT(user.ID)
+	if err != nil {
+		return "", err
+	}
+
+	return token, nil
+}
+
+func (uc *userUseCase) GetByID(id string) (*domain.User, error) {
+	return uc.repo.GetByID(id)
 }
